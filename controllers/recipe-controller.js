@@ -54,5 +54,15 @@ export const updateRecipe =  async (req,res,next) =>{
 }
 
 export const deleteRecipe = async (req,res,next) =>{
-    const recipeId = req.prams.id;
+    const recipeId = req.params.id;
+    try{
+        recipe = await Recipe.findByIdAndRemove(recipeId)
+    }catch(err){
+        console.log(err);
+    }
+    if(!recipe){
+        return res.status(500)
+        .json({message: "Unable to Delete the Recipe"})
+    }
+    return res.status(200).json({recipe})
 }
