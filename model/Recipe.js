@@ -14,11 +14,11 @@ const recipeSchema = new Schema({
     },
     image: {
         type: String,
-        required: true,
+        required: false,
     },
     user: {
         type: String,
-        required: true,
+        required: false,
     }
 });
 
