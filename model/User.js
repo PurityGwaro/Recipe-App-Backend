@@ -17,6 +17,13 @@ const userSchema = new Schema({
         required: true,
         minlength: 6,
     },
+    recipes:[
+        {
+          type:mongoose.Types.ObjectId,
+          ref:"Recipe",
+          required:true,  
+        }
+    ]
 });
 
 export default mongoose.model("User", userSchema);

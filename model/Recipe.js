@@ -10,15 +10,15 @@ const recipeSchema = new Schema({
     description: {
         type: String,
         required: true,
-        unique: true,
     },
     image: {
         type: String,
-        required: false,
+        required: true,
     },
     user: {
-        type: String,
-        required: false,
+        type: mongoose.Types.ObjectId,
+        ref:"User",
+        required: true,
     }
 });
 

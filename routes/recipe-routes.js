@@ -4,7 +4,8 @@ import {
     getById,
     addRecipe,
     updateRecipe,
-    deleteRecipe
+    deleteRecipe,
+    getByUserId
 } from "../controllers/recipe-controller";
  
 const recipeRouter = express.Router();
@@ -13,6 +14,8 @@ const recipeRouter = express.Router();
 recipeRouter.get("/",getAllRecipes)
 
 recipeRouter.get("/:id", getById)
+
+recipeRouter.get("/user/:id", getByUserId)
 
 recipeRouter.post("/add",addRecipe)
 

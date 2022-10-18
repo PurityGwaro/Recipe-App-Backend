@@ -15,9 +15,9 @@ const port = 5000;
 // must have this middleware to allow the app to always know it's getting json data
 app.use(express.json());
 
-app.use("/api/user", router)
+app.use("/api/users", router)
 
-app.use("/api/recipe",recipeRouter)
+app.use("/api/recipes",recipeRouter)
 
 // mongoose.connect returns a promise
 mongoose.connect(db)
