@@ -42,7 +42,7 @@ export const addRecipe = async (req,res,next) =>{
         return console.log(err);
     }
     if(!existingUser){
-        return res.status(500).
+        return res.status(404).
         res.json({mess:"Unable to Find user by this id"})
     }
     const recipe = new Recipe({
@@ -64,6 +64,7 @@ export const addRecipe = async (req,res,next) =>{
         await existingUser.save({session}) 
         // if everything is okay commit transaction
         await session.commitTransaction()
+        
     }catch(err){
         console.log(err)
         return res.status(500).json({msg:`this is the err: ${err}`})
