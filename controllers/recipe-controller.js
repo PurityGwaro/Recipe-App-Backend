@@ -107,7 +107,7 @@ export const deleteRecipe = async (req,res,next) =>{
         return res.json({err})
     }
     if(!recipe){
-        return res.status(500)
+        return res.status(404)
         .json({message: "Unable to delete the recipe"})
     }
     return res.status(200).json({message: "Successfully deleted the recipe"});
