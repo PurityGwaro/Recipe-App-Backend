@@ -18,6 +18,7 @@ export const getAllUsers = async (req,res,next) => {
 
 // sign up a user
 export const signup = async (req,res,next) =>{
+    console.log(req.body);
     // first get details sent from the frontend for creating the user. Get everything from the req.body
     // destructure things you'll get from the req.body
     const { name, email, password } = req.body;
@@ -38,7 +39,7 @@ export const signup = async (req,res,next) =>{
         name,
         email,
         password: hashedPass,
-        blogs:[]
+        recipes:[]
     })
      
 
@@ -53,6 +54,7 @@ export const signup = async (req,res,next) =>{
 
 // login 
 export const login = async (req,res,next)=>{
+    console.log('log in started');
     const { email, password } = req.body;
     let existingUser;
     try{

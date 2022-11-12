@@ -2,10 +2,13 @@ import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/user-routes";
 import recipeRouter from "./routes/recipe-routes"
+import cors from 'cors'
 
 const app = express();
+app.use(cors())
+
 const db = "mongodb+srv://puritygwaro:db1234@cluster0.kw2y3g6.mongodb.net/RecipeApp?retryWrites=true&w=majority";
-const port = 5001;
+const port = 5000;
 
 // // middleware - used for handling some tasks in the app
 // app.use("/api",(req,res,next) =>{
@@ -18,6 +21,8 @@ app.use(express.json());
 app.use("/api/users", router)
 
 app.use("/api/recipes",recipeRouter)
+
+
 
 // mongoose.connect returns a promise
 mongoose.connect(db)
