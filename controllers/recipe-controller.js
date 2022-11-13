@@ -6,7 +6,7 @@ import User from "../model/User";
 export const getAllRecipes = async (req,res,next) =>{
     let recipes;
     try{
-        recipes = await Recipe.find();
+        recipes = await Recipe.find().populate("user");
     }catch(err){
         return console.log(err);
     }
