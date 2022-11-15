@@ -8,7 +8,7 @@ const app = express();
 app.use(cors())
 
 const db = "mongodb+srv://puritygwaro:db1234@cluster0.kw2y3g6.mongodb.net/RecipeApp?retryWrites=true&w=majority";
-const port = 5000;
+const port = 5001;
 
 // // middleware - used for handling some tasks in the app
 // app.use("/api",(req,res,next) =>{

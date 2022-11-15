@@ -43,7 +43,7 @@ export const addRecipe = async (req,res,next) =>{
     }
     if(!existingUser){
         return res.status(404).
-        res.json({mess:"Unable to Find user by this id"})
+        json({mess:"Unable to Find user by this id"})
     }
     const recipe = new Recipe({
         title,
